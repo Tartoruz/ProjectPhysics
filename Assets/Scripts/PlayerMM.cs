@@ -61,6 +61,8 @@ public class PlayerMM : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        Debug.Log(stopMove);
+        Debug.Log(whatIsGround);
         if (stopMove == false)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed , ForceMode.Force);
