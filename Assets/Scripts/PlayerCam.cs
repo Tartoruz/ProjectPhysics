@@ -11,7 +11,7 @@ public class PlayerCam : MonoBehaviour
     public float rotationSpeed;
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

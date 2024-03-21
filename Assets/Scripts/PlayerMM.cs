@@ -38,7 +38,6 @@ public class PlayerMM : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
