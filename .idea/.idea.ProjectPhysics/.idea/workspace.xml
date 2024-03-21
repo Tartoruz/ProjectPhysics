@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f9cd6e8-5df4-4417-a663-0a48e2fbe0cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectPhysics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +97,9 @@
       <updated>1710856943573</updated>
       <workItem from="1710856945410" duration="4235000" />
       <workItem from="1710939457453" duration="2117000" />
-      <workItem from="1710941599567" duration="9092000" />
+      <workItem from="1710941599567" duration="13063000" />
+      <workItem from="1711039099048" duration="48000" />
+      <workItem from="1711039172044" duration="2190000" />
     </task>
     <servers />
   </component>

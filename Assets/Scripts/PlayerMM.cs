@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class PlayerMM : MonoBehaviour
 {
     [Header("Movement")] 
     public float moveSpeed = 5f;
-    private bool stopMove;
+    private bool stopMove = false;
 
     [Header("Jump")] 
     public float jumpTimer = 0f;
@@ -16,8 +17,9 @@ public class PlayerMM : MonoBehaviour
     
     bool readyToJump;
     
-
-    [Header("Ground Check")] public float playerHeight;
+    [Header("Ground Check")]
+    public Vector3 boxSize;
+    public float maxDistance;
     public LayerMask whatIsGround;
     bool grounded;
 
@@ -35,7 +37,7 @@ public class PlayerMM : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        readyToJump = true;
+        readyToJump = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -50,10 +52,17 @@ public class PlayerMM : MonoBehaviour
 
     void GroundCheck()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+        grounded = Physics.BoxCast(transform.position, boxSize, -transform.up, transform.rotation, maxDistance,
+            whatIsGround);
+        Debug.Log(grounded);
         if (grounded == false)
         {
             stopMove = true;
+        }
+
+        if (grounded && readyToJump == false)
+        {
+            stopMove = false;
         }
     }
 
@@ -61,8 +70,7 @@ public class PlayerMM : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        Debug.Log(stopMove);
-        Debug.Log(whatIsGround);
+        Debug.Log($"Stop move : {stopMove} ");
         if (stopMove == false)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed , ForceMode.Force);
@@ -97,6 +105,7 @@ public class PlayerMM : MonoBehaviour
             }
 
             jumpForce = (jumpTimer / maxJumpTime) * maxJump;
+            jumpForce = Mathf.Clamp(jumpForce, jumpForce / 4, jumpForce);
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && grounded && readyToJump)
@@ -106,12 +115,13 @@ public class PlayerMM : MonoBehaviour
             readyToJump = false;
             jumpTimer = 0;
             jumpForce = 0;
-            Invoke(nameof(ResetJump),1f);
+            stopMove = false;
         }
     }
 
-    void ResetJump()
+    private void OnDrawGizmos()
     {
-        stopMove = false;
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position-transform.up*maxDistance,boxSize);
     }
 }
