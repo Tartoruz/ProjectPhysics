@@ -51,7 +51,11 @@ public class PlayerMM : MonoBehaviour
         GroundCheck();
         Move();
         Jump();
-        
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            CheckPointManager.instance.ResetToCheckpoint(transform);
+        }
     }
 
     void GroundCheck()
