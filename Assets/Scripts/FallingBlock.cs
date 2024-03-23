@@ -11,9 +11,14 @@ public class FallingBlock : MonoBehaviour
     private float blockDisappearTime;
     private bool isStepingOn = false;
     
+    public Material mat;
+    public Color startCol;
+    public Color maxCol;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        mat.color = Color.white;
     }
 
     // Update is called once per frame
@@ -36,6 +41,7 @@ public class FallingBlock : MonoBehaviour
     private void BlockFallen()
     {
         timeCountDown += Time.deltaTime;
+        mat.color = Color.Lerp(startCol, maxCol, timeCountDown / 8);
 
         if (timeCountDown >= 8)
         {
