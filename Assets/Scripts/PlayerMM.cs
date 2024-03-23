@@ -16,6 +16,11 @@ public class PlayerMM : MonoBehaviour
     public float jumpForce;
     
     bool readyToJump;
+
+    [Header("Color")] 
+    public Material mat;
+    public Color startCol;
+    public Color maxCol;
     
     [Header("Ground Check")]
     public Vector3 boxSize;
@@ -116,6 +121,8 @@ public class PlayerMM : MonoBehaviour
             jumpForce = 0;
             stopMove = false;
         }
+
+        mat.color = Color.Lerp(startCol, maxCol, (jumpTimer / maxJumpTime));
     }
 
     private void OnDrawGizmos()

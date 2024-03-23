@@ -7,7 +7,6 @@
     <list default="true" id="8f9cd6e8-5df4-4417-a663-0a48e2fbe0cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectPhysics/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCam.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
