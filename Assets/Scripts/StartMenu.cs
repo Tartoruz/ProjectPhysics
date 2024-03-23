@@ -16,4 +16,8 @@ public class StartMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void EndCredits()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
 }
