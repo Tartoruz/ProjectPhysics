@@ -123,6 +123,13 @@ public class PlayerMM : MonoBehaviour
         }
 
         mat.color = Color.Lerp(startCol, maxCol, (jumpTimer / maxJumpTime));
+        if (Input.GetKeyDown(KeyCode.LeftControl) && readyToJump && stopMove)
+        {
+            readyToJump = false;
+            stopMove = false;
+            jumpTimer = 0;
+            jumpForce = 0;
+        }
     }
 
     private void OnDrawGizmos()
