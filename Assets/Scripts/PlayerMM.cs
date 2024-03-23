@@ -58,7 +58,7 @@ public class PlayerMM : MonoBehaviour
     {
         grounded = Physics.BoxCast(transform.position, boxSize, -transform.up, transform.rotation, maxDistance,
             whatIsGround);
-        Debug.Log(grounded);
+        //Debug.Log(grounded);
         if (grounded == false)
         {
             stopMove = true;
@@ -74,7 +74,7 @@ public class PlayerMM : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        Debug.Log($"Stop move : {stopMove} ");
+        //Debug.Log($"Stop move : {stopMove} ");
         if (stopMove == false)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed , ForceMode.Force);

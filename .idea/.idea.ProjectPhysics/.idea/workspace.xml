@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8f9cd6e8-5df4-4417-a663-0a48e2fbe0cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectPhysics/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moon/Prefab/Moon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moon/Prefab/Moon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moon/Prefab/Moon.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moon/Prefab/Moon.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gravity/Attraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gravity/Attraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gravity/Attraction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gravity/PlanetAttraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gravity/CheckCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCam.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMM.cs" root0="FORCE_HIGHLIGHTING" />
   </component>

@@ -39,4 +39,5 @@ public class Attraction : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, attractionRange);
     }
+    
 }
