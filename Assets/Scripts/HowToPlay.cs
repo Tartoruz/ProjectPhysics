@@ -15,6 +15,7 @@ public class HowToPlay : MonoBehaviour
     void Start()
     {
         _enterStage = GetComponent<EnterStage>();
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame

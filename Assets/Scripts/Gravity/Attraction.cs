@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Attraction : MonoBehaviour
 {
@@ -32,8 +33,16 @@ public class Attraction : MonoBehaviour
                 }
             }
         }
+        
     }
     
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadSceneAsync(2);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

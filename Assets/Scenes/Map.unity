@@ -22143,7 +22143,6 @@ GameObject:
   - component: {fileID: 843427887}
   - component: {fileID: 843427886}
   - component: {fileID: 843427890}
-  - component: {fileID: 843427889}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -22181,7 +22180,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -22237,18 +22236,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843427884}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &843427889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843427884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98db416720c665a45b3193295a0311cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &843427890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22261,8 +22248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a70fb38ced0064eb38fee527f51a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractionForce: 1000
-  attractionRange: 400
+  attractionForce: 100
+  attractionRange: 420
 --- !u!1 &843473676
 GameObject:
   m_ObjectHideFlags: 0
@@ -26756,6 +26743,7 @@ GameObject:
   - component: {fileID: 1476038651}
   - component: {fileID: 1476038652}
   - component: {fileID: 1476038653}
+  - component: {fileID: 1476038654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -38745,6 +38733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parachute
       objectReference: {fileID: 0}
+    - target: {fileID: 6594857547540405152, guid: 960eb368c18a667459378890bbb11287,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6686518087528353563, guid: 960eb368c18a667459378890bbb11287,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39652,6 +39645,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSFX: {fileID: 8300000, guid: 6f8dc0ba706281645b8faea7818e7017, type: 3}
   chargingSFX: {fileID: 8300000, guid: 3478df60739e239428bf8667bc426fd2, type: 3}
+--- !u!65 &1476038654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032826680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1493262650
 GameObject:
   m_ObjectHideFlags: 0
