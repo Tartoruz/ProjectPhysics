@@ -8,10 +8,12 @@ using UnityEngine.UI;
 public class HowToPlay : MonoBehaviour
 {
     [SerializeField] private Image tutorialBg;
-    private bool isTutorialClose = true;
+    public bool isTutorialClose = true;
+
+    private EnterStage _enterStage;
     void Start()
     {
-        
+        _enterStage = GetComponent<EnterStage>();
     }
 
     // Update is called once per frame

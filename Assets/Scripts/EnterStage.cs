@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class EnterStage : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup StageImage;
+    [SerializeField] public CanvasGroup StageImage;
     [SerializeField] private TextMeshProUGUI StageNameTxt;
+
     public int StageNum;
     private float _fadeCountDown;
     private bool _isEnterStage;
