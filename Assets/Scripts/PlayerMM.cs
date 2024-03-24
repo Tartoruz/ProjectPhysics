@@ -7,7 +7,7 @@ public class PlayerMM : MonoBehaviour
 {
     [Header("Movement")] 
     public float moveSpeed = 5f;
-    private bool stopMove = false;
+    public bool stopMove = false;
 
     [Header("Jump")] 
     public float jumpTimer = 0f;
@@ -26,10 +26,15 @@ public class PlayerMM : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask whatIsGround;
-    bool grounded;
+    public bool grounded;
 
     public Transform orientation;
     public Transform PlayerObj;
+
+    [Header("Parachute")] 
+    [SerializeField] private GameObject parachutePre;
+    private bool isParachute;
+    [SerializeField] private float airResistantY;
 
     float horizontalInput;
     float verticalInput;
@@ -51,7 +56,8 @@ public class PlayerMM : MonoBehaviour
         GroundCheck();
         Move();
         Jump();
-        
+        Parachute();
+        Debug.Log(isParachute + "orararaar");
     }
 
     void GroundCheck()
@@ -65,6 +71,11 @@ public class PlayerMM : MonoBehaviour
         }
 
         if (grounded && readyToJump == false)
+        {
+            isParachute = false;
+            stopMove = false;
+        }
+        if (grounded == false && isParachute)
         {
             stopMove = false;
         }
@@ -129,6 +140,25 @@ public class PlayerMM : MonoBehaviour
             stopMove = false;
             jumpTimer = 0;
             jumpForce = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded == false )
+        {
+            isParachute = !isParachute;
+        }
+    }
+
+    void Parachute()
+    {
+        if (isParachute)
+        {
+            parachutePre.SetActive(true);
+            rb.AddForce(new Vector3(0,-rb.velocity.y * airResistantY,0),ForceMode.Force);
+        }
+
+        if (isParachute == false)
+        {
+            parachutePre.SetActive(false);
         }
     }
 
