@@ -44,7 +44,6 @@ public class FallingBlock : MonoBehaviour
         timeCountDown += Time.deltaTime;
         lerpedColor = Color.Lerp(Color.white, Color.black, timeCountDown / 8);
         renderer.material.color = lerpedColor;
-        Debug.Log(timeCountDown);
         if (timeCountDown >= 8 && _isReturn == true)
         {
             Debug.Log("timeCountDown > 8");
