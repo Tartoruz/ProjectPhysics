@@ -58,6 +58,11 @@ public class PlayerMM : MonoBehaviour
         Jump();
         Parachute();
         Debug.Log(isParachute + "orararaar");
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            CheckPointManager.instance.ResetToCheckpoint(transform);
+        }
     }
 
     void GroundCheck()
