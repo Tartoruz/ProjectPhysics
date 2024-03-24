@@ -13,6 +13,9 @@ public class SFX : MonoBehaviour
     
     public AudioClip  ParachuteSound;
     private AudioSource  ParachuteSource;
+    
+    public AudioClip  CoinSound;
+    private AudioSource  CoinSource;
 
     void Start()
     {
@@ -25,6 +28,9 @@ public class SFX : MonoBehaviour
         
         ParachuteSource = gameObject.AddComponent<AudioSource>();
         ParachuteSource.clip = ParachuteSound;
+        
+        CoinSource = gameObject.AddComponent<AudioSource>();
+        CoinSource.clip = ParachuteSound;
         
     }
 
@@ -51,5 +57,10 @@ public class SFX : MonoBehaviour
     public void PlayParachuteSound()
     {
         ParachuteSource.Play();
+    }
+
+    public void CoinCollect()
+    {
+        CoinSource.Play();
     }
 }
