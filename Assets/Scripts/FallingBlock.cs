@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class FallingBlock : MonoBehaviour
 {
+    [SerializeField] private GameObject FallingBlockSpawbPoint;
     private Rigidbody rb;
     private float timeCountDown;
     private bool blockFall;
     private float blockDisappearTime;
     private bool isStepingOn = false;
+    private bool _isReturn = true;
     
-    public Material mat;
-    public Color startCol;
-    public Color maxCol;
-    
+    Color lerpedColor = Color.white;
+    Renderer renderer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        mat.color = Color.white;
+        renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -41,22 +42,30 @@ public class FallingBlock : MonoBehaviour
     private void BlockFallen()
     {
         timeCountDown += Time.deltaTime;
-        mat.color = Color.Lerp(startCol, maxCol, timeCountDown / 8);
-
-        if (timeCountDown >= 8)
+        lerpedColor = Color.Lerp(Color.white, Color.black, timeCountDown / 8);
+        renderer.material.color = lerpedColor;
+        Debug.Log(timeCountDown);
+        if (timeCountDown >= 8 && _isReturn == true)
         {
-            blockFall = true;
+            Debug.Log("timeCountDown > 8");
             rb.isKinematic = false;
-            if (blockFall)
-            {
-                rb.useGravity = true;
-                blockDisappearTime += Time.deltaTime;
-            }
+            rb.useGravity = true;
+            blockDisappearTime += Time.deltaTime;
+            
 
         }
         if (blockDisappearTime >= 3)
         {
-            Destroy(gameObject);
+            blockDisappearTime = 0;
+            timeCountDown = 0;
+            transform.position = FallingBlockSpawbPoint.transform.position;
+            transform.rotation = FallingBlockSpawbPoint.transform.rotation;
+            _isReturn = true;
+            lerpedColor = Color.white;
+            renderer.material.color = Color.white;
+            rb.isKinematic = true;
+            rb.useGravity = false;
+            isStepingOn = false;
         }
     }
 
