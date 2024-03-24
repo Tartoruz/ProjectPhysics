@@ -57,7 +57,6 @@ public class PlayerMM : MonoBehaviour
         Move();
         Jump();
         Parachute();
-        Debug.Log(isParachute + "orararaar");
 
         if (Input.GetKeyDown(KeyCode.R))
         {

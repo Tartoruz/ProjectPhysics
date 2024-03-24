@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckCondition : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class CheckCondition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("You Won!");
+            SceneManager.LoadSceneAsync(2);
         }
     }
 }
