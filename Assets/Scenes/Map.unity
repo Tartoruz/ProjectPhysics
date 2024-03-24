@@ -26755,6 +26755,7 @@ GameObject:
   - component: {fileID: 1476038650}
   - component: {fileID: 1476038651}
   - component: {fileID: 1476038652}
+  - component: {fileID: 1476038653}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -39637,6 +39638,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1885376506}
+--- !u!114 &1476038653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032826680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f67915c7777743bcdf56f81e9e578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSFX: {fileID: 8300000, guid: 6f8dc0ba706281645b8faea7818e7017, type: 3}
+  chargingSFX: {fileID: 8300000, guid: 3478df60739e239428bf8667bc426fd2, type: 3}
 --- !u!1 &1493262650
 GameObject:
   m_ObjectHideFlags: 0
@@ -54226,8 +54241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091697071}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.23655276, y: -0.000000016718042, z: -0.000000004070217,
-    w: 0.97161865}
+  m_LocalRotation: {x: -0.23655276, y: 0.00000001671804, z: 0.0000000040702166, w: 0.97161865}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -56782,3 +56796,4 @@ SceneRoots:
   - {fileID: 1332996095}
   - {fileID: 1069948620}
   - {fileID: 1110374295}
+  - {fileID: 918230361}
