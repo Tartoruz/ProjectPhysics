@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour
 {
-    public AudioClip backgroundMusic; 
-    private AudioSource audioSource; 
+    public AudioSource bgmSound; // ประกาศตัวแปร AudioSource สำหรับเล่น BGM
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = backgroundMusic;
-        audioSource.loop = true;
-        
-        audioSource.Play();
+        bgmSound = gameObject.AddComponent<AudioSource>();
+        bgmSound.Play();
     }
 }
