@@ -4,41 +4,52 @@ using UnityEngine;
 
 public class SFX : MonoBehaviour
 {
-    public AudioClip jumpSFX;
-    private AudioSource jumpSound;
-    
-    public AudioClip chargingSFX;
-    private AudioSource chargingSound;
+    public AudioClip jumpSound;
+    private AudioSource jumpSource;
+
+    public AudioClip chargingSound;
+    private AudioSource chargingSource;
     private bool isChargingSoundPlaying = false;
     
-    
+    public AudioClip  ParachuteSound;
+    private AudioSource  ParachuteSource;
+
     void Start()
     {
-        jumpSound = gameObject.AddComponent<AudioSource>();
-        jumpSound.clip = jumpSFX;
+        jumpSource = gameObject.AddComponent<AudioSource>();
+        jumpSource.clip = jumpSound;
+
+        chargingSource = gameObject.AddComponent<AudioSource>();
+        chargingSource.clip = chargingSound;
+        chargingSource.loop = true;
         
-        chargingSound = gameObject.AddComponent<AudioSource>();
-        chargingSound.clip = chargingSFX;
-        chargingSound.loop = true;
+        ParachuteSource = gameObject.AddComponent<AudioSource>();
+        ParachuteSource.clip = ParachuteSound;
+        
     }
-    
+
     public void PlayJumpSound()
     {
-        jumpSound.Play();
+        jumpSource.Play();
     }
-    
-    public void PlaychargingSound()
+
+    public void PlayChargingSound()
     {
-        chargingSound.Play();
+        chargingSource.Play();
         isChargingSoundPlaying = true;
     }
-    
-    public void StopchargingSound()
+
+    public void StopChargingSound()
     {
-        if (isChargingSoundPlaying && chargingSound.isPlaying)
+        if (isChargingSoundPlaying && chargingSource.isPlaying)
         {
-            chargingSound.Stop();
+            chargingSource.Stop();
             isChargingSoundPlaying = false;
         }
+    }
+    
+    public void PlayParachuteSound()
+    {
+        ParachuteSource.Play();
     }
 }

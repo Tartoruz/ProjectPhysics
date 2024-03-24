@@ -117,7 +117,7 @@ public class PlayerMM : MonoBehaviour
             readyToJump = true;
             stopMove = true;
             
-            sfx.PlaychargingSound();
+            sfx.PlayChargingSound();
         }
 
         if (Input.GetKey(KeyCode.Space) && grounded && readyToJump)
@@ -143,7 +143,7 @@ public class PlayerMM : MonoBehaviour
             stopMove = false;
 
             sfx.PlayJumpSound();
-            sfx.StopchargingSound();
+            sfx.StopChargingSound();
         }
 
         mat.color = Color.Lerp(startCol, maxCol, (jumpTimer / maxJumpTime));
@@ -158,6 +158,8 @@ public class PlayerMM : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded == false )
         {
             isParachute = !isParachute;
+            
+            sfx.PlayParachuteSound();
         }
     }
 
@@ -167,6 +169,7 @@ public class PlayerMM : MonoBehaviour
         {
             parachutePre.SetActive(true);
             rb.AddForce(new Vector3(0,-rb.velocity.y * airResistantY,0),ForceMode.Force);
+            
         }
 
         if (isParachute == false)
