@@ -38,11 +38,15 @@ public class PlayerMM : MonoBehaviour
 
     Rigidbody rb;
 
+    private SFX sfx;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = false;
+
+        sfx = GetComponent<SFX>();
     }
 
     // Update is called once per frame
@@ -97,6 +101,8 @@ public class PlayerMM : MonoBehaviour
         {
             readyToJump = true;
             stopMove = true;
+            
+            sfx.PlaychargingSound();
         }
 
         if (Input.GetKey(KeyCode.Space) && grounded && readyToJump)
@@ -120,6 +126,9 @@ public class PlayerMM : MonoBehaviour
             jumpTimer = 0;
             jumpForce = 0;
             stopMove = false;
+
+            sfx.PlayJumpSound();
+            sfx.StopchargingSound();
         }
 
         mat.color = Color.Lerp(startCol, maxCol, (jumpTimer / maxJumpTime));
