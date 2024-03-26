@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMM : MonoBehaviour
 {
     [Header("Movement")] 
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
     public bool stopMove = false;
 
     [Header("Jump")] 
@@ -58,7 +58,6 @@ public class PlayerMM : MonoBehaviour
     void Update()
     {
         GroundCheck();
-        Move();
         Jump();
         Parachute();
 
@@ -66,6 +65,10 @@ public class PlayerMM : MonoBehaviour
         {
             CheckPointManager.instance.ResetToCheckpoint(transform);
         }
+    }
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     void GroundCheck()
@@ -82,10 +85,12 @@ public class PlayerMM : MonoBehaviour
         {
             isParachute = false;
             stopMove = false;
+            moveSpeed = 20;
         }
         if (grounded == false && isParachute)
         {
             stopMove = false;
+            moveSpeed = 5;
         }
     }
 
@@ -96,14 +101,14 @@ public class PlayerMM : MonoBehaviour
         //Debug.Log($"Stop move : {stopMove} ");
         if (stopMove == false)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed , ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed,ForceMode.Force);
             moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             // limit velocity if needed
             if(flatVel.magnitude > moveSpeed)
             {
-                Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                Vector3 limitedVel = flatVel.normalized * moveSpeed ;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
         }
